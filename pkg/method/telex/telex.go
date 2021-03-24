@@ -4,6 +4,15 @@ package telex
 // https://en.wikipedia.org/wiki/Telex_(input_method)
 // https://www.unikey.org/support/ukmanual.html#telex
 
+const (
+	ToneNgang = iota
+	ToneHuyen // huyền
+	ToneSac   // sắc
+	ToneHoi   // hỏi
+	ToneNga   // ngã
+	ToneNang  // nặng
+)
+
 var (
 	diacritics = map[string]string{
 		"aw": "ă",
@@ -31,12 +40,12 @@ var (
 	}
 
 	toneKeys = map[string]int{
-		"z": 0, // clear previous: toansz -> toan
-		"f": 1, // huyeenf -> huyền
-		"s": 2, // sawcs -> sắc
-		"r": 3, // hoir -> 	hỏi
-		"x": 4, // ngax -> ngã
-		"j": 5, // nawngj -> nặng
+		"z": ToneNgang,
+		"f": ToneHuyen,
+		"s": ToneSac,
+		"r": ToneHoi,
+		"x": ToneNga,
+		"j": ToneNang,
 	}
 )
 
